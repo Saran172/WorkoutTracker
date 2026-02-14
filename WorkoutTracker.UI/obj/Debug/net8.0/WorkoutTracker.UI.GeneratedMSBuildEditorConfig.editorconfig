@@ -1,0 +1,105 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WorkoutTracker.UI
+build_property.RootNamespace = WorkoutTracker.UI
+build_property.ProjectDir = D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\WorkoutTracker.UI\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\WorkoutTracker.UI
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Layout/AuthLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQXV0aExheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Auth/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXExvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-pt6hq4qeiz
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Auth/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXFJlZ2lzdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-x5xxmnllwt
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-swy3xeu95n
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Layout/MobileNavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTW9iaWxlTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-5seosrkh2s
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-t5b9fd8p3q
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/MainScreens/ActiveWorkout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluU2NyZWVuc1xBY3RpdmVXb3Jrb3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-90e15fz7nz
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/MainScreens/DashboardScreen.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluU2NyZWVuc1xEYXNoYm9hcmRTY3JlZW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-v5sngl1em8
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/MainScreens/LandingPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluU2NyZWVuc1xMYW5kaW5nUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-q7u3qvx1uq
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/MainScreens/Planner.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluU2NyZWVuc1xQbGFubmVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-w0o2sik4jm
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/MainScreens/Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluU2NyZWVuc1xQcm9maWxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-31lpe3btn1
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/MainScreens/Progress.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluU2NyZWVuc1xQcm9ncmVzcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-wohmi34s1v
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Components/MainScreens/Workout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluU2NyZWVuc1xXb3Jrb3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-86s4h21x8k
+
+[D:/BusonSource/MiscSar/WorkoutTrackerNew/WorkoutTracker/WorkoutTracker.UI/Modal/Toaster.razor]
+build_metadata.AdditionalFiles.TargetPath = TW9kYWxcVG9hc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-tuxu4548fj

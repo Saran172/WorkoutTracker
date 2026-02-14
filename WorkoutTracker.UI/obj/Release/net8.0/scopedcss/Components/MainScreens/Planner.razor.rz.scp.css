@@ -1,0 +1,280 @@
+.planner-page[b-w0o2sik4jm] {
+    padding: 1.5rem;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.planner-container[b-w0o2sik4jm] {
+    max-width: 56rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+    padding-bottom: 5rem;
+}
+
+.planner-header[b-w0o2sik4jm] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title[b-w0o2sik4jm] {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.subtitle[b-w0o2sik4jm] {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* Form Card */
+.form-card[b-w0o2sik4jm] {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    flex-shrink: 0; /* Keeps form from shrinking when list is long */
+}
+
+.form-header[b-w0o2sik4jm] {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+    .form-header h2[b-w0o2sik4jm] {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+.form-body[b-w0o2sik4jm] {
+    padding: 1.5rem;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-row[b-w0o2sik4jm] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group[b-w0o2sik4jm] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+    .form-group label[b-w0o2sik4jm] {
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+/* Inputs */
+.form-input[b-w0o2sik4jm] {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: white;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+    .form-input:focus[b-w0o2sik4jm] {
+        border-color: var(--primary);
+    }
+
+.text-area[b-w0o2sik4jm] {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Buttons */
+.btn-primary-action[b-w0o2sik4jm] {
+    background-color: var(--primary);
+    color: black;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-outline[b-w0o2sik4jm] {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.form-actions[b-w0o2sik4jm] {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* Template List Items */
+.template-item[b-w0o2sik4jm] {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-info h3[b-w0o2sik4jm] {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.item-info p[b-w0o2sik4jm] {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.btn-delete[b-w0o2sik4jm] {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    transition: all 0.2s;
+}
+
+    .btn-delete:hover[b-w0o2sik4jm] {
+        color: #ff4d4d;
+        background: rgba(255, 77, 77, 0.1);
+    }
+
+
+
+
+/* ... (All styles from previous response) ... */
+
+.templates-list[b-w0o2sik4jm] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-shrink: 0; /* Prevents the list from squishing */
+}
+
+.template-item[b-w0o2sik4jm] {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem; /* Adjusted for consistency */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+    .template-item:hover[b-w0o2sik4jm] {
+        border-color: rgba(255, 213, 0, 0.3);
+    }
+
+.item-info h3[b-w0o2sik4jm] {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.item-info p[b-w0o2sik4jm] {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.btn-delete[b-w0o2sik4jm] {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+
+    .btn-delete:hover[b-w0o2sik4jm] {
+        color: #ff4d4d;
+        background: rgba(255, 77, 77, 0.1);
+    }
+
+
+
+
+/* Selected Exercise Tags Section */
+.selected-exercises[b-w0o2sik4jm] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: -0.5rem; /* Tighter spacing under label */
+}
+
+.ex-tag[b-w0o2sik4jm] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 213, 0, 0.1);
+    border: 1px solid rgba(255, 213, 0, 0.3);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+    .ex-tag button[b-w0o2sik4jm] {
+        background: none;
+        border: none;
+        color: var(--primary);
+        font-size: 1rem;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+        .ex-tag button:hover[b-w0o2sik4jm] {
+            color: white;
+        }
+
+/* Ensure dropdown matches theme */
+select.form-input[b-w0o2sik4jm] {
+    appearance: none; /* Removes default arrow to use custom one if needed */
+    cursor: pointer;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .form-row[b-w0o2sik4jm] {
+        grid-template-columns: 1fr;
+    }
+
+    .planner-page[b-w0o2sik4jm] {
+        /* Account for your bottom nav or top bar on mobile */
+        padding-top: 5rem;
+        padding-bottom: 7rem;
+    }
+}

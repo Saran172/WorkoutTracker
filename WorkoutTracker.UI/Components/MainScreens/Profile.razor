@@ -1,0 +1,70 @@
+﻿@inject AuthenticationStateProvider stateprovider
+
+<div class="profile-page">
+    <div class="profile-container">
+        
+        @* Header *@
+        <div class="page-header">
+            <h1>Profile</h1>
+            <p>Manage your account</p>
+        </div>
+
+        @* Account Info Card *@
+        <div class="profile-card">
+            <div class="card-header">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Account Info
+                </h3>
+            </div>
+            
+            <div class="card-body">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="text" class="form-input disabled-input" value="you@example.com" disabled />
+                </div>
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-input" @bind="userName" placeholder="Your name" />
+                </div>
+
+                <div class="input-group">
+                    <label>Fitness Goal</label>
+                    <input type="text" class="form-input" @bind="fitnessGoal" placeholder="e.g., Build muscle, Lose weight" />
+                </div>
+
+                <button class="btn-primary" @onclick="HandleSave">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+
+        @* Danger Zone / Sign Out *@
+        <div class="profile-card sign-out-card">
+            <button class="btn-destructive" @onclick="Logout">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                Sign Out
+            </button>
+        </div>
+
+    </div>
+</div>
+
+@code {
+    private string userName = "user";
+    private string fitnessGoal = "";
+
+    private void HandleSave()
+    {
+       
+    }
+    private async Task Logout()
+    {
+        var state = (CustomAuthenticationStateProvider)stateprovider;
+        state.Logout();
+        StateHasChanged();   
+    }
+
+}

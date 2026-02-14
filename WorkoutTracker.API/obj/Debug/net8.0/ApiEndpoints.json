@@ -1,0 +1,239 @@
+[
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTAlgorithmController",
+    "Method": "InitializeWorkout",
+    "RelativePath": "api/WTAlgorithm/v2/initialize",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Shared.ReqDTO.InitializeWorkoutRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTAlgorithmController",
+    "Method": "ProcessWorkout",
+    "RelativePath": "api/WTAlgorithm/v2/process",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Shared.ReqDTO.ProcessWorkoutRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "AddWorkoutSession",
+    "RelativePath": "api/WTMain/v1/AddWorkoutSession",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workout",
+        "Type": "Shared.WorkoutDTO.WorkoutSessionCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "CreateTemplate",
+    "RelativePath": "api/WTMain/v1/CreateTemplate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "template",
+        "Type": "Shared.PlannerDTO.TemplateUpsertDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "DeleteTemplate",
+    "RelativePath": "api/WTMain/v1/DeleteTemplate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "templateId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/WTMain/v1/GetAllUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "GetExercises",
+    "RelativePath": "api/WTMain/v1/GetExercises",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "GetTemplateDetail",
+    "RelativePath": "api/WTMain/v1/GetTemplateDetail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "templateId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "GetTemplates",
+    "RelativePath": "api/WTMain/v1/GetTemplates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "GetUserInfo",
+    "RelativePath": "api/WTMain/v1/GetUserInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "PostUserInfo",
+    "RelativePath": "api/WTMain/v1/PostUserInfo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDto",
+        "Type": "Shared.Entities.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "UpdateTemplate",
+    "RelativePath": "api/WTMain/v1/UpdateTemplate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "templateId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "template",
+        "Type": "Shared.PlannerDTO.TemplateUpsertDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "WebLogin",
+    "RelativePath": "api/WTMain/v1/WebLogin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "LoginDto",
+        "Type": "Shared.Entities.WebLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WTMainController",
+    "Method": "WebRegister",
+    "RelativePath": "api/WTMain/v1/WebRegister",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerDto",
+        "Type": "Shared.Entities.WebRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTracker.API.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "v",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WorkoutTracker.API.WeatherForecast, WorkoutTracker.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

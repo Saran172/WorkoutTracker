@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "WorkoutTracker.UI\\WorkoutTracker.UI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "WorkoutTracker.API\\WorkoutTracker.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

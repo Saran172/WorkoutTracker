@@ -1,0 +1,38 @@
+﻿@inject NavigationService NavService
+
+<main class="landing-container">
+    <div class="glow-effect"></div>
+
+    <div class="content-wrapper">
+        <div class="logo-box">
+            <i class="fa-solid fa-bolt-lightning"></i>
+        </div>
+
+        <h1 class="hero-title">FitTrack</h1>
+        <p class="hero-subtitle">
+            A minimal workout tracker. Log your sessions, track your progress, stay consistent.
+        </p>
+
+        <div class="button-group">
+            <button class="btn-primary" @onclick="OnGetStarted">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <button class="btn-secondary" @onclick="OnSignIn">Sign In</button>
+        </div>
+
+        <div class="features-row">
+            <div class="feature-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Progress tracking</span>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Custom templates</span>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-stopwatch"></i>
+                <span>Rest timers</span>
+            </div>
+        </div>
+    </div>
+</main>

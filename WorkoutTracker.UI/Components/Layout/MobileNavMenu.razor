@@ -1,0 +1,30 @@
+﻿@inject NavigationService NavService
+
+<nav class="mobile-nav">
+    <div class="mobile-nav-items">
+        <a class="mobile-nav-item @(NavService.ActiveMenu == "Dashboard" ? "active" : "")" @onclick="@(() => NavService.SetActiveMenu("Dashboard"))">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a class="mobile-nav-item @(NavService.ActiveMenu == "Workout" ? "active" : "")" @onclick="@(() => NavService.SetActiveMenu("Workout"))">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>Workout</span>
+        </a>
+
+        <a class="mobile-nav-item @(NavService.ActiveMenu == "Planner" ? "active" : "")" @onclick="@(() => NavService.SetActiveMenu("Planner"))">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Planner</span>
+        </a>
+
+        <a class="mobile-nav-item @(NavService.ActiveMenu == "Progress" ? "active" : "")" @onclick="@(() => NavService.SetActiveMenu("Progress"))">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Progress</span>
+        </a>
+
+        <a class="mobile-nav-item @(NavService.ActiveMenu == "Profile" ? "active" : "")" @onclick="@(() => NavService.SetActiveMenu("Profile"))">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </div>
+</nav>

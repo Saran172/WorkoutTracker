@@ -1,0 +1,15 @@
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\bin\Release\net8.0\CommonServices.deps.json
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\bin\Release\net8.0\CommonServices.dll
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\bin\Release\net8.0\CommonServices.pdb
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\bin\Release\net8.0\Shared.dll
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\bin\Release\net8.0\Shared.pdb
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\CommonServices.csproj.AssemblyReference.cache
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\CommonServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\CommonServices.AssemblyInfoInputs.cache
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\CommonServices.AssemblyInfo.cs
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\CommonServices.csproj.CoreCompileInputs.cache
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\CommonSe.CFF15DCA.Up2Date
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\CommonServices.dll
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\refint\CommonServices.dll
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\CommonServices.pdb
+D:\BusonSource\MiscSar\WorkoutTrackerNew\WorkoutTracker\CommonServices\obj\Release\net8.0\ref\CommonServices.dll

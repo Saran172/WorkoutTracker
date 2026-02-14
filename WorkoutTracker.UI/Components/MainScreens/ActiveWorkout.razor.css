@@ -1,0 +1,490 @@
+﻿/* --- BASE LAYOUT --- */
+:root {
+    --primary: #ffd500;
+    --secondary: #1a1a1a;
+    --bg-color: #0a0a0a;
+    --card-bg: #111111;
+    --border: #222222;
+    --text-muted: #888888;
+}
+
+.active-session-container, .selector-screen {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    padding-bottom: 140px; /* Essential space for the fixed finish button */
+    color: white;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.content-limiter {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 92%;
+}
+
+/* --- STICKY HEADERS --- */
+.session-header, .selector-header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+}
+
+.header-top, .header-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.header-title-row {
+    justify-content: flex-start;
+    gap: 0.75rem;
+}
+
+    .header-info h1, .header-title-row h1 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0;
+    }
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- PROGRESS & STATUS --- */
+.status-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+.status-paused {
+    color: var(--primary);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* --- TIMERS & CLOCKS --- */
+.timer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.timer-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    padding: 0.75rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.active-timer {
+    border-color: rgba(255, 213, 0, 0.3);
+    background: rgba(255, 213, 0, 0.04);
+    box-shadow: 0 0 20px rgba(255, 213, 0, 0.05);
+}
+
+.timer-card .label {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.timer-card .value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    font-family: 'JetBrains Mono', monospace; /* Professional timer font */
+}
+
+/* --- ACTION BUTTONS (PAUSE/STOP) --- */
+.action-btn, .back-btn-styled {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.back-btn-styled {
+    background: var(--secondary);
+}
+
+.action-btn:hover {
+    background: var(--border);
+}
+
+.btn-danger {
+    color: #ff4d4d;
+    border-color: rgba(255, 77, 77, 0.2);
+}
+
+/* --- EXERCISE SELECTOR (SEARCH & TABS) --- */
+.search-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-input {
+    width: 100%;
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 12px 12px 42px;
+    color: white;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+    .search-input:focus {
+        border-color: var(--primary);
+    }
+
+.category-scroll {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+}
+
+.category-tag {
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .category-tag.active {
+        background: var(--primary);
+        color: black;
+        border-color: var(--primary);
+    }
+
+/* --- EXERCISE CARDS --- */
+.exercise-card, .exercise-select-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.exercise-select-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+}
+
+    .exercise-select-card h3 {
+        font-size: 0.9rem;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .exercise-select-card p {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin: 2px 0 0 0;
+    }
+
+.add-button-pill {
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    padding: 5px 14px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.card-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- SETS ENTRY TABLE --- */
+.sets-table {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Update these to ensure the 5th column (delete) has space */
+.table-header, .set-row {
+    display: grid;
+    grid-template-columns: 35px 1fr 1fr 45px 35px; /* Added 35px for the delete icon */
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.table-header {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+/* --- EXERCISE DELETE BTN (The Trash Can Icon) --- */
+.delete-btn {
+    background: rgba(255, 77, 77, 0.08); /* Subtle red tint */
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    color: #ff4d4d;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    .delete-btn:hover {
+        background: #ff4d4d;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    .delete-btn svg {
+        stroke: currentColor; /* Matches the text color automatically */
+    }
+
+/* --- SET DELETE BTN (The 'X' Icon) --- */
+.delete-set-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+}
+
+    .delete-set-btn:hover {
+        color: #ff4d4d;
+        opacity: 1;
+        transform: rotate(90deg); /* Modern hover effect */
+    }
+
+    .delete-set-btn svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+    }
+
+.set-row {
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 8px;
+    padding: 4px 0;
+}
+
+.row-completed {
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+.col-input input {
+    width: 100%;
+    background: #000;
+    border: 1px solid var(--border);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --- THE CHECK TICK BUTTON --- */
+.check-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+    color: transparent; /* Tick icon hidden by default */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+    .check-btn.is-done {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: black; /* Tick icon visible */
+        transform: scale(1.05);
+    }
+
+/* --- FOOTER & FINISH BUTTON --- */
+.session-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 0;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    z-index: 150;
+}
+
+.finish-btn {
+    display: block;
+    width: 100%;
+    background: var(--primary);
+    color: black;
+    border: none;
+    padding: 1.1rem;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+/* --- SUMMARY MODAL --- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.summary-card {
+    background: var(--card-bg);
+    border: 1px solid var(--primary);
+    border-radius: 28px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.5rem 10px;
+    border-radius: 18px;
+    margin: 2rem 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+}
+
+    .stat-value small {
+        font-size: 0.75rem;
+        color: var(--primary);
+        margin-left: 2px;
+    }
+
+.done-btn {
+    width: 100%;
+    background: var(--primary);
+    color: black;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- UTILITIES --- */
+.add-set-link {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-exercise-dashed {
+    width: 100%;
+    padding: 1.25rem;
+    border: 2px dashed var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+    .add-exercise-dashed:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+    }

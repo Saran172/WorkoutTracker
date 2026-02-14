@@ -1,0 +1,107 @@
+﻿@using WorkoutTracker.UI.Modal
+@inherits LayoutComponentBase
+@inject NavigationService NavigationService
+
+
+
+<Toaster />
+<AuthorizeView>
+    <Authorized>
+        @if (NavigationService.ActiveMenu != "ActiveWorkout")
+        {
+            <header class="mobile-topbar">
+                <div class="brand">
+                    <div class="icon-square">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="primary-svg"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"></path><path d="m21.5 21.5-1.4-1.4"></path><path d="M3.9 3.9 2.5 2.5"></path><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"></path></svg>
+                    </div>
+                    <span class="logo-text">FitTrack</span>
+                </div>
+                <button class="menu-toggle" @onclick="ToggleNavMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </header>
+        }
+
+        <div class="total-con @(NavigationService.ActiveMenu == "ActiveWorkout" ? "workout-mode" : "")" @onclick="HandleOutsideClick">
+
+            @if (NavigationService.ActiveMenu != "ActiveWorkout")
+            {
+                <NavMenu @ref="navMenuRef" IsCollapsed="IsCollapsed" />
+
+                <footer class="mobile-nav">
+                    <MobileNavMenu />
+                </footer>
+            }
+
+            <main class="main-layout @(NavigationService.ActiveMenu == "ActiveWorkout" ? "no-margin" : "")">
+                <div class="content-container @(NavigationService.ActiveMenu == "ActiveWorkout" ? "full-width-content" : "")">
+                    @if (NavigationService.CurrentContent != null)
+                    {
+                        @NavigationService.CurrentContent
+                    }
+                    else
+                    {
+                        @Body
+                    }
+                </div>
+            </main>
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        @switch (currentView)
+        {
+            case AuthView.Login:
+                <WorkoutTracker.UI.Components.Auth.Login OnBackToLanding="ShowLanding" OnNavigateToSignUp="ShowSignUp" />
+                break;
+
+            case AuthView.SignUp:
+                <WorkoutTracker.UI.Components.Auth.Register OnBackToLogin="ShowLogin" />
+                break;
+
+            default:
+                <WorkoutTracker.UI.Components.MainScreens.LandingPage OnSignIn="ShowLogin" OnGetStarted="ShowSignUp"/>
+                break;
+        }
+    </NotAuthorized>
+</AuthorizeView>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+@code {
+    private bool IsCollapsed = true; // Start collapsed on mobile
+    private NavMenu? navMenuRef;
+
+    private void ToggleNavMenu()
+    {
+        IsCollapsed = !IsCollapsed;
+    }
+
+    private void HandleOutsideClick()
+    {
+        if (!IsCollapsed)
+        {
+            IsCollapsed = true;
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        NavigationService.OnChange += StateHasChanged;
+    }
+
+    private enum AuthView { Landing, Login, SignUp }
+    private AuthView currentView = AuthView.Landing;
+
+    private void ShowLanding() => currentView = AuthView.Landing;
+    private void ShowLogin() => currentView = AuthView.Login;
+    private void ShowSignUp() => currentView = AuthView.SignUp;
+
+    public void Dispose()
+    {
+        NavigationService.OnChange -= StateHasChanged;
+    }
+}

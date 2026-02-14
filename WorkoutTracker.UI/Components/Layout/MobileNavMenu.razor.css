@@ -1,0 +1,55 @@
+﻿/* Mobile Footer Container */
+.mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    background-color: rgba(255, 213, 0, 0%);
+    backdrop-filter: blur(8px);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+}
+
+/* Flex wrapper for items */
+.mobile-nav-items {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* Individual NavLink style */
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #616161; /* text-muted-foreground */
+    transition: color 0.2s ease;
+    flex: 1;
+}
+
+    .mobile-nav-item i {
+        font-size: 1.2rem;
+    }
+
+    .mobile-nav-item span {
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+
+    /* Active State (Blazor NavLink 'active' class) */
+    .mobile-nav-item.active {
+        color: #ffd500;
+    }
+
+/* Hide on Desktop - only shows on mobile screens */
+@media (min-width: 768px) {
+    .mobile-nav {
+        display: none;
+    }
+}

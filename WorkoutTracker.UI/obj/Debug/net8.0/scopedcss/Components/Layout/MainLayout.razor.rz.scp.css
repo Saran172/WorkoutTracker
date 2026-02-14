@@ -1,0 +1,141 @@
+
+.total-con[b-swy3xeu95n] {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mobile-topbar[b-swy3xeu95n] {
+    display: none;
+    height: 64px;
+    padding: 0 1.5rem;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+.menu-toggle[b-swy3xeu95n] {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.main-layout[b-swy3xeu95n] {
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+    padding-bottom: 80px;
+}
+
+.no-margin[b-swy3xeu95n] {
+    padding-bottom: 0 !important;
+}
+
+.content-container[b-swy3xeu95n] {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    /* Ensure the container can grow as long as the content needs */
+    min-height: min-content;
+}
+
+.brand[b-swy3xeu95n] {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.icon-square[b-swy3xeu95n] {
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 213, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-svg[b-swy3xeu95n] {
+    color: var(--primary);
+}
+
+.logo-text[b-swy3xeu95n] {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+@media (max-width: 1300px) {
+    .mobile-topbar[b-swy3xeu95n] {
+        display: flex;
+    }
+
+    .total-con[b-swy3xeu95n] {
+        flex-direction: column;
+    }
+
+    .content-container[b-swy3xeu95n] {
+        padding: 1rem;
+    }
+}
+
+
+
+@media (min-width: 769px) {
+    .main-layout.no-margin[b-swy3xeu95n] {
+        margin-left: 0 !important;
+    }
+}
+
+/* Specific overrides for the Workout focus mode */
+.total-con.workout-mode[b-swy3xeu95n] {
+    height: 100vh;
+    flex-direction: column; /* Force stack for full screen */
+}
+
+.content-container.full-width-content[b-swy3xeu95n] {
+    padding: 0; /* Removes default padding for a flush look */
+    max-width: 100%; /* Allows content to span full width */
+    margin: 0;
+}
+
+/* Ensure background stays consistent when everything is hidden */
+.main-layout.no-margin[b-swy3xeu95n] {
+    background-color: var(--bg-color);
+}
+
+
+
+#blazor-error-ui[b-swy3xeu95n] {
+    background: #ff4d4d;
+    color: white;
+    bottom: 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Blazor will automatically change this to 'block' if an error occurs */
+    left: 0;
+    padding: 0.6rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    text-align: center;
+}
+
+    #blazor-error-ui .reload[b-swy3xeu95n] {
+        margin-left: 10px;
+        color: white;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    #blazor-error-ui .dismiss[b-swy3xeu95n] {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }

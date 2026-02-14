@@ -1,0 +1,203 @@
+﻿@using System.Timers
+@using Shared.Entities
+@using Shared.WorkoutDTO
+@using WorkoutTracker.UI.Components.Services
+@using WorkoutTracker.UI.Modal
+@implements IDisposable
+@inject NavigationManager Nav
+@inject NavigationService NavService
+@inject ToastService ToastService
+@inject IDataflow Flow
+@inject ProtectedSessionStorage SessionStorage
+
+@if (!showExerciseSelector)
+{
+    <div class="active-session-container">
+        @* --- STICKY HEADER --- *@
+        <header class="session-header">
+            <div class="content-limiter">
+                <div class="header-top">
+                    <div class="header-info">
+                        <h1>Quick Workout</h1>
+                        <span class="status-label @(isPaused ? "status-paused" : "")">
+                            @(isPaused ? "Paused" : "In Progress")
+                        </span>
+                    </div>
+                    <div class="header-actions">
+                        <button class="action-btn" @onclick="TogglePause">
+                            @if (isPaused)
+                            {
+                                <span class="play-icon">▶</span>
+                            }
+                            else
+                            {
+
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="14" y="4" width="4" height="16" rx="1"></rect><rect x="6" y="4" width="4" height="16" rx="1"></rect></svg>
+                            }
+                        </button>
+                        <button class="action-btn btn-danger" @onclick="CancelWorkout">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"></rect></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="timer-grid">
+                    <div class="timer-card active-timer">
+                        <span class="label">Workout Time</span>
+                        <span class="value">@FormatTime(secondsElapsed)</span>
+                    </div>
+                    <div class="timer-card">
+                        <span class="label">Rest Timer</span>
+                        <span class="value">@FormatTime(restSeconds)</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="exercise-list content-limiter">
+            @foreach (var ex in activeExercises)
+            {
+                <div class="exercise-card">
+                    <div class="card-head">
+                        <h3>@ex.Name</h3>
+                        <button class="delete-btn" @onclick="() => activeExercises.Remove(ex)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2M10 11v6M14 11v6" /></svg>
+                        </button>
+                    </div>
+
+                    <div class="sets-table">
+                        <div class="table-header">
+                            <div class="col-set">Set</div>
+                            <div class="col-input">Weight</div>
+                            <div class="col-input">Reps</div>
+                            <div class="col-check"></div>
+                        </div>
+
+                        @foreach (var set in ex.Sets)
+                        {
+                            <div class="set-row @(set.IsDone ? "row-completed" : "")">
+                                <div class="col-set">@set.Number</div>
+                                <div class="col-input"><input type="number" @bind="set.Weight" /></div>
+                                <div class="col-input"><input type="number" @bind="set.Reps" /></div>
+                                <div class="col-check">
+                                    <button class="check-btn @(set.IsDone ? "is-done" : "")" @onclick="() => ToggleSet(set)">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    </button>
+                                </div>
+                                @* New Delete Button *@
+                                <button class="delete-set-btn" @onclick="() => ex.Sets.Remove(set)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                                </button>
+                            </div>
+                        }
+                    </div>
+                    <button class="add-set-link" @onclick="() => AddSet(ex)">+ Add Set</button>
+                </div>
+            }
+
+            <button class="add-exercise-dashed" @onclick="() => showExerciseSelector = true">
+                + Add Exercise
+            </button>
+        </div>
+
+        <footer class="session-footer">
+            <button class="finish-btn content-limiter" @onclick="FinishWorkout">Finish Workout</button>
+        </footer>
+    </div>
+}
+else
+{
+    <div class="selector-screen">
+        <div class="selector-header-sticky">
+            <div class="content-limiter">
+                <div class="header-title-row">
+                    <button class="back-btn-styled" @onclick="() => showExerciseSelector = false">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6" /></svg>
+                    </button>
+                    <h1>Add Exercise</h1>
+                </div>
+
+                <div class="search-container">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                    <input type="text" placeholder="Search exercises..." @bind="searchText" @bind:event="oninput" class="search-input" />
+                </div>
+
+                <div class="category-scroll">
+                    @foreach (var cat in categories)
+                    {
+                        <button class="category-tag @(selectedCategory == cat ? "active" : "")"
+                                @onclick="() => selectedCategory = cat">
+                            @cat
+                        </button>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="selector-results">
+            <div class="content-limiter">
+                @foreach (var ex in FilteredLibrary)
+                {
+                    <div class="exercise-select-card" @onclick="() => SelectExercise(ex)">
+                        <div class="card-info">
+                            <h3>@ex.Name</h3>
+                            <p>@ex.MuscleGroup • @(ex.IsCompound ? "Compound" : "Isolation")</p>
+                        </div>
+                        <button class="add-button-pill">Add</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@code {
+    private bool showExerciseSelector = false;
+    private string searchText = "";
+    private int secondsElapsed = 0;
+    private int restSeconds = 0;
+    private bool isPaused = false;
+    private Timer? timer;
+    private string selectedCategory = "All";
+
+
+    private void AddSet(WorkoutExercise ex) => ex.Sets.Add(new ExSet { Number = ex.Sets.Count + 1 });
+    private void ToggleSet(ExSet set) 
+    {
+        set.IsDone = !set.IsDone;
+        if (set.IsDone) 
+        {
+            restSeconds = 90;
+        }
+        else
+        {
+            set.Reps = 0;
+            set.Weight = 0;
+        }
+    }
+    private string FormatTime(int sec) => TimeSpan.FromSeconds(sec).ToString(@"mm\:ss");
+    private void TogglePause() => isPaused = !isPaused;
+
+    // --- SESSION ACTIONS ---
+    private double totalVolume = 0;
+    private int completedSetsCount = 0;
+
+    private void RemoveSet(WorkoutExercise ex, ExSet set)
+    {
+        ex.Sets.Remove(set);
+        for (int i = 0; i < ex.Sets.Count; i++)
+        {
+            ex.Sets[i].Number = i + 1;
+        }
+    }
+
+    private async Task CancelWorkout()
+    {
+        ToastService.ShowError("Workout cancelled");
+        NavService.SetActiveMenu("Workout");
+    }
+
+    public void Dispose() => timer?.Dispose();
+}

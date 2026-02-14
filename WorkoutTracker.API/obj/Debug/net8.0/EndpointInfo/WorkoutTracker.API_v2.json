@@ -1,0 +1,308 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "WorkoutTrackerAPI",
+    "description": "",
+    "version": "2.0"
+  },
+  "paths": {
+    "/api/WTAlgorithm/v2/initialize": {
+      "post": {
+        "tags": [
+          "WTAlgorithm"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InitializeWorkoutRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InitializeWorkoutRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InitializeWorkoutRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/WTAlgorithm/v2/process": {
+      "post": {
+        "tags": [
+          "WTAlgorithm"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProcessWorkoutRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProcessWorkoutRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProcessWorkoutRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Exercise": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "weight": {
+            "type": "number",
+            "format": "double"
+          },
+          "sets": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "targetRepsMin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "targetRepsMax": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "targetMuscles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MuscleGroup"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExerciseProgress": {
+        "type": "object",
+        "properties": {
+          "failedSessionsInRow": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isInDeload": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExerciseSession": {
+        "type": "object",
+        "properties": {
+          "exerciseName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SetLog"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExperienceLevel": {
+        "enum": [
+          "Beginner",
+          "Intermediate",
+          "Advanced"
+        ],
+        "type": "string"
+      },
+      "InitializeWorkoutRequest": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/UserProfile"
+          },
+          "exerciseDefinitions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Exercise"
+            },
+            "nullable": true
+          },
+          "exerciseHistory": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/SetLog"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MuscleGroup": {
+        "enum": [
+          "Chest",
+          "Back",
+          "Shoulders",
+          "Biceps",
+          "Triceps",
+          "Quads",
+          "Hamstrings",
+          "Glutes",
+          "Calves",
+          "Abs"
+        ],
+        "type": "string"
+      },
+      "MuscleVolume": {
+        "type": "object",
+        "properties": {
+          "muscle": {
+            "$ref": "#/components/schemas/MuscleGroup"
+          },
+          "weeklySets": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProcessWorkoutRequest": {
+        "type": "object",
+        "properties": {
+          "trainingGoal": {
+            "$ref": "#/components/schemas/TrainingGoal"
+          },
+          "exercise": {
+            "$ref": "#/components/schemas/Exercise"
+          },
+          "session": {
+            "$ref": "#/components/schemas/ExerciseSession"
+          },
+          "progress": {
+            "$ref": "#/components/schemas/ExerciseProgress"
+          },
+          "volumeMap": {
+            "type": "object",
+            "properties": {
+              "Chest": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              },
+              "Back": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              },
+              "Shoulders": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              },
+              "Biceps": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              },
+              "Triceps": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              },
+              "Quads": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              },
+              "Hamstrings": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              },
+              "Glutes": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              },
+              "Calves": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              },
+              "Abs": {
+                "$ref": "#/components/schemas/MuscleVolume"
+              }
+            },
+            "additionalProperties": false,
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetLog": {
+        "type": "object",
+        "properties": {
+          "weight": {
+            "type": "number",
+            "format": "double"
+          },
+          "reps": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rpe": {
+            "type": "number",
+            "format": "double"
+          },
+          "rir": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TrainingGoal": {
+        "enum": [
+          "Hypertrophy",
+          "Strength"
+        ],
+        "type": "string"
+      },
+      "UserProfile": {
+        "type": "object",
+        "properties": {
+          "bodyWeightKg": {
+            "type": "number",
+            "format": "double"
+          },
+          "experienceLevel": {
+            "$ref": "#/components/schemas/ExperienceLevel"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Authentication": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Authentication": [ ]
+    }
+  ]
+}

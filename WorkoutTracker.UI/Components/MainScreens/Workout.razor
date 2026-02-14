@@ -1,0 +1,84 @@
+﻿@inject NavigationManager _NavigationManager
+@inject NavigationService NavService
+@inject IDataflow Flow
+@inject ProtectedSessionStorage SessionStorage
+@inject WorkoutStateService WorkoutState
+
+<div class="workout-page">
+    <div class="workout-container">
+
+        @* Page Title *@
+        <div class="page-header">
+            <h1>Start Workout</h1>
+            <p>Choose a template or start a quick workout</p>
+        </div>
+
+        @* Quick Workout Hero Card *@
+        <div class="quick-workout-card">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Quick Workout</h2>
+                    <p>Start an empty workout and add exercises as you go</p>
+                </div>
+                <button class="btn-start-now" @onclick="StartSession">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 3l14 9-14 9V3z" /></svg>
+                    Start Now
+                </button>
+            </div>
+        </div>
+
+        @* Templates Section *@
+        <div class="templates-section">
+            <div class="section-header">
+                <h2>My Templates</h2>
+                <button class="btn-outline" @onclick="NewTemplate_Click">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" /></svg>
+                    New Template
+                </button>
+            </div>
+
+
+            <div class="templates-grid">
+                @if (savedTemplates != null && savedTemplates.Any())
+                {
+                    @foreach (var template in savedTemplates)
+                    {
+                        <div class="template-card">
+                            <div class="template-inner">
+                                <div class="template-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="primary-svg"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"></path><path d="m21.5 21.5-1.4-1.4"></path><path d="M3.9 3.9 2.5 2.5"></path><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"></path></svg>
+                                </div>
+
+                                <div class="template-info">
+                                    <h3>@template.Name</h3>
+
+                                    @if (!string.IsNullOrWhiteSpace(template.Description))
+                                    {
+                                        <p class="template-desc">@template.Description</p>
+                                    }
+
+                                    <p class="exercise-count">
+                                        @template.ExerciseCount exercise@(template.ExerciseCount == 1 ? "" : "s")
+                                    </p>
+                                </div>
+
+                                <button class="btn-icon-only"
+                                        title="Start workout"
+                                        @onclick="() => StartTemplate(template.Id)">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="empty-state">
+                        <p>No templates yet. Create one.</p>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

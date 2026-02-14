@@ -1,0 +1,126 @@
+﻿@page "/progress"
+
+<div class="progress-page">
+    <div class="progress-container">
+
+        @* Header *@
+        <div class="page-header">
+            <h1>Progress</h1>
+            <p>Track your fitness journey</p>
+        </div>
+
+        @* Top Stats Grid *@
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="icon-box yellow-bg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.4 14.4 9.6 9.6" /><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z" /></svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-value">2</span>
+                    <span class="stat-label">Total Workouts</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon-box yellow-bg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-value">0m</span>
+                    <span class="stat-label">Total Time</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon-box yellow-bg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-value">0m</span>
+                    <span class="stat-label">Avg Duration</span>
+                </div>
+            </div>
+        </div>
+
+        @* Chart Card *@
+        <div class="chart-card">
+            <h2 class="chart-title">This Week</h2>
+
+            <div class="chart-wrapper">
+                @* Y-Axis Labels *@
+                <div class="y-axis">
+                    <span>4</span>
+                    <span>3</span>
+                    <span>2</span>
+                    <span>1</span>
+                    <span>0</span>
+                </div>
+
+                @* The Bars *@
+                <div class="chart-area">
+                    @foreach (var day in WeeklyStats)
+                    {
+                        <div class="bar-group"
+                             @onmousemove="@(e => HandleMouseMove(day, e))"
+                             @onmouseout="HideTooltip">
+                            <div class="bar-container">
+                                <div class="bar" style="height: @(day.Workouts * 25)%"></div>
+                            </div>
+                            <span class="day-label">@day.DayName</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        @* Floating Tooltip *@
+        @if (activeDay != null)
+        {
+            <div class="chart-tooltip" style="left: @(mouseX)px; top: @(mouseY)px;">
+                <div class="tooltip-header">@activeDay.DayName</div>
+                <div class="tooltip-row">
+                    <span>Workouts:</span>
+                    <span class="yellow-text">@activeDay.Workouts</span>
+                </div>
+                <div class="tooltip-row">
+                    <span>Duration:</span>
+                    <span class="yellow-text">@activeDay.Duration mins</span>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+@code {
+    private double mouseX;
+    private double mouseY;
+    private DayStat? activeDay;
+
+    private List<DayStat> WeeklyStats = new()
+    {
+        new DayStat { DayName = "Tue", Workouts = 1, Duration = 25 },
+        new DayStat { DayName = "Wed", Workouts = 3, Duration = 60 },
+        new DayStat { DayName = "Thu", Workouts = 0, Duration = 0 },
+        new DayStat { DayName = "Fri", Workouts = 2, Duration = 45 },
+        new DayStat { DayName = "Sat", Workouts = 4, Duration = 90 },
+        new DayStat { DayName = "Sun", Workouts = 1, Duration = 20 },
+        new DayStat { DayName = "Mon", Workouts = 2, Duration = 35 }
+    };
+
+    private void HandleMouseMove(DayStat day, MouseEventArgs e)
+    {
+        activeDay = day;
+        mouseX = e.ClientX;
+        mouseY = e.ClientY - 10; // Offset tooltip slightly above cursor
+    }
+
+    private void HideTooltip() => activeDay = null;
+
+    public class DayStat
+    {
+        public string DayName { get; set; } = "";
+        public int Workouts { get; set; }
+        public int Duration { get; set; }
+    }
+}
