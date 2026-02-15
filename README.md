@@ -17,10 +17,10 @@ A full-stack workout tracking web application to log, view, and analyze your fit
 
 ## 📸 Screenshots
 
-![Dashboard](ScreenShots/Mobile_dash.jpg)
-![Workout Log](ScreenShots/Mobile_WorkoutLog)
-![New Template](ScreenShots/Mobile_Template)
-![Progress Chart](ScreenShots/Mobile_ProgressBar)
+![Dashboard](ScreenShots/Mobile_dash.jpeg)
+![Workout Log](ScreenShots/Mobile_WorkoutLog.jpeg)
+![New Template](ScreenShots/Mobile_Template.jpeg)
+![Progress Chart](ScreenShots/Mobile_ProgressBar.jpeg)
 
 ## 🛠️ Tech Stack
 
