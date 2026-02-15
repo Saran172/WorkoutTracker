@@ -64,18 +64,5 @@ A full-stack workout tracking web application to log, view, and analyze your fit
   - Git
   - MSSQL
 
-## 🚀 Getting Started
 
-### Prerequisites
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or higher)
-- A modern web browser
-- (optional) Visual Studio 2022+ with .NET desktop/web development workload
-
-### Installation
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/Saran172/WorkoutTracker.git
-cd WorkoutTracker
