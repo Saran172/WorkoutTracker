@@ -18,28 +18,13 @@ A full-stack workout tracking web application to log, view, and analyze your fit
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="ScreenShots/Mobile_dash.jpeg" 
-       alt="Dashboard - Weekly overview with start workout button and recent activity" 
-       width="380" 
-       style="margin: 10px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-  <img src="ScreenShots/Mobile_WorkoutLog.jpeg" 
-       alt="Quick Workout in progress - Bench Press exercise with sets, reps, timer" 
-       width="380" 
-       style="margin: 10px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+  <img src="ScreenShots/Mobile_dash.jpeg" alt="Dashboard" style="max-width: 340px; width: 100%; margin: 12px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
+  <img src="ScreenShots/Mobile_WorkoutLog.jpeg" alt="Active workout" style="max-width: 340px; width: 100%; margin: 12px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
+  <img src="ScreenShots/Mobile_Template.jpeg" alt="Planner" style="max-width: 340px; width: 100%; margin: 12px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
+  <img src="ScreenShots/Mobile_ProgressBar.jpeg" alt="Progress" style="max-width: 340px; width: 100%; margin: 12px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
 </div>
 
-<div align="center">
-  <img src="ScreenShots/Mobile_Template.jpeg" 
-       alt="Workout Planner - List of templates like Pull and Upper with exercise counts" 
-       width="380" 
-       style="margin: 10px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-  <img src="ScreenShots/Mobile_ProgressBar.jpeg" 
-       alt="Progress screen - Weekly bar chart, total workouts, time stats" 
-       width="380" 
-       style="margin: 10px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-</div>
-
-<p align="center"><em>Mobile views of the FitTrack workout tracker (dark mode)</em></p>
+<p align="center"><em>FitTrack on mobile (dark theme)</em></p>
 
 ## 🛠️ Tech Stack
 
