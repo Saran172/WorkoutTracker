@@ -64,5 +64,12 @@ A full-stack workout tracking web application to log, view, and analyze your fit
   - Git
   - MSSQL
 
+## 📄 License
 
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+---
+
+Made with 💻 by Saran  
+⭐ Feel free to star the repo if you find it useful!
 
