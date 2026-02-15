@@ -4,6 +4,14 @@ A full-stack workout tracking web application to log, view, and analyze your fit
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-brightgreen)](https://workouttracker-112.runasp.net)
 
+<p align="center">
+  <img src="https://img.shields.io/badge/.NET-8.0+-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET">
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#">
+  <img src="https://img.shields.io/github/repo-size/Saran172/TimeSheet?style=for-the-badge&color=green" alt="Repo Size">
+  <img src="https://img.shields.io/github/last-commit/Saran172/TimeSheet?style=for-the-badge&color=blue" alt="Last Commit">
+  <img src="https://img.shields.io/github/stars/Saran172/TimeSheet?style=for-the-badge&color=yellow" alt="Stars">
+</p>
+
 **Backend**: .NET (C#) API  
 **Frontend**: HTML + CSS + JavaScript  
 **Architecture**: RESTful API + static frontend
