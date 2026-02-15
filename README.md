@@ -19,22 +19,11 @@ A full-stack workout tracking web application to log, view, and analyze your fit
 
 ## 📸 Screenshots
 
-<div align="center">
-  <img src="ScreenShots/Mobile_dash.jpeg" 
-       alt="Dashboard" 
-       style="max-width: 340px; width: 100%; margin: 24px auto 16px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
-
-  <img src="ScreenShots/Mobile_WorkoutLog.jpeg" 
-       alt="Active workout" 
-       style="max-width: 340px; width: 100%; margin: 24px auto 16px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
-
-  <img src="ScreenShots/Mobile_Template.jpeg" 
-       alt="Planner" 
-       style="max-width: 340px; width: 100%; margin: 24px auto 16px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
-
-  <img src="ScreenShots/Mobile_ProgressBar.jpeg" 
-       alt="Progress" 
-       style="max-width: 340px; width: 100%; margin: 24px auto 16px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
+<div align="center" style="display: flex; flex-direction: column; justify-content: center; gap:5px">
+  <img src="ScreenShots/Mobile_dash.jpeg" alt="Dashboard" style="max-width: 340px; width: 100%; margin: 12px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
+  <img src="ScreenShots/Mobile_WorkoutLog.jpeg" alt="Active workout" style="max-width: 340px; width: 100%; margin: 12px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
+  <img src="ScreenShots/Mobile_Template.jpeg" alt="Planner" style="max-width: 340px; width: 100%; margin: 12px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
+  <img src="ScreenShots/Mobile_ProgressBar.jpeg" alt="Progress" style="max-width: 340px; width: 100%; margin: 12px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.3);">
 </div>
 
 <p align="center"><em>FitTrack on mobile (dark theme)</em></p>
