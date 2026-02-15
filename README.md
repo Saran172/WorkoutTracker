@@ -2,6 +2,8 @@
 
 A full-stack workout tracking web application to log, view, and analyze your fitness routines.
 
+**Live Demo:** [FitTrack - Try it live](https://workouttracker-112.runasp.net)
+
 **Backend**: .NET (C#) API  
 **Frontend**: HTML + CSS + JavaScript  
 **Architecture**: RESTful API + static frontend
